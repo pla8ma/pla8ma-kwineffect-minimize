@@ -1,0 +1,22 @@
+{
+    "KPackageStructure": "KWin/Effect",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Name": "Pla8ma"
+            }
+        ],
+        "Category": "Appearance",
+        "Description": "Pla8ma minimize animation: shrinking to just above the taskbar button while fading",
+        "Description[de]": "Pla8ma-Animation zum Minimieren und Wiederherstellen: schrumpfen bis knapp über den Taskleistenknopf und dabei ausblenden",
+        "EnabledByDefault": false,
+        "Id": "kwineffect_pla8ma_minimize",
+        "License": "GPL-2.0-or-later",
+        "Name": "Minimize (Pla8ma)",
+        "Name[de]": "Minimieren (Pla8ma)"
+    },
+    "X-KDE-Ordering": 60,
+    "X-KWin-Exclusive-Category": "minimize",
+    "X-Plasma-API": "javascript",
+    "X-Plasma-MainScript": "code/main.js"
+}
