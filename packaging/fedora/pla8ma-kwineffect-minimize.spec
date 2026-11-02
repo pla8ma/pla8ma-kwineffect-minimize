@@ -4,12 +4,16 @@
 #   rpmbuild -bb pla8ma-kwineffect-minimize.spec
 #   sudo dnf install ~/rpmbuild/RPMS/noarch/pla8ma-kwineffect-minimize-*.rpm
 
+# .copr/Makefile fixes both when making the source RPM: snapdate is the
+# commit's date, buildstamp the time of the build, so every rebuild is an
+# update for dnf.
 %global snapdate %(date +%Y%m%d)
+%global buildstamp %(date -u +%Y%m%d%H%M)
 %global effect kwineffect_pla8ma_minimize
 
 Name:           pla8ma-kwineffect-minimize
 Version:        0^%{snapdate}
-Release:        1%{?dist}
+Release:        %{buildstamp}%{?dist}
 Summary:        Pla8ma minimize animation for KDE Plasma
 License:        GPL-2.0-or-later
 URL:            https://github.com/pla8ma/pla8ma-kwineffect-minimize
@@ -39,5 +43,5 @@ cp -a package/. %{buildroot}%{_datadir}/kwin/effects/%{effect}/
 %{_datadir}/kwin/effects/%{effect}/
 
 %changelog
-* Mon Nov 02 2026 Pla8ma <johndoe@example.com> - 0^20261102-1
+* Mon Nov 02 2026 Pla8ma <johndoe@example.com>
 - Snapshot of the main branch
