@@ -22,6 +22,18 @@ The script switches the effect on and turns off Squash and Magic Lamp, as
 only one minimize animation can run at a time. You can change this in
 System Settings > Window Management > Desktop Effects.
 
+## Packages
+
+Instead of `install.sh`, you can build a package of the newest state of
+`main`:
+
+- Fedora: [`packaging/fedora/pla8ma-kwineffect-minimize.spec`](packaging/fedora/pla8ma-kwineffect-minimize.spec),
+  the steps are at the top of the file.
+- Arch Linux: [`packaging/arch/PKGBUILD`](packaging/arch/PKGBUILD), run
+  `makepkg -si` in its folder.
+
+The package installs the effect for all users but does not switch it on:
+do that in System Settings > Window Management > Desktop Effects.
 ## Uninstall
 
 ```bash

@@ -1,0 +1,29 @@
+# Builds the newest state of the main branch:
+#   makepkg -si
+
+pkgname=pla8ma-kwineffect-minimize-git
+_repo=pla8ma-kwineffect-minimize
+_effect=kwineffect_pla8ma_minimize
+pkgver=r0
+pkgrel=1
+pkgdesc='Pla8ma minimize animation for KDE Plasma'
+arch=('any')
+url="https://github.com/pla8ma/$_repo"
+license=('GPL-2.0-or-later')
+depends=('kwin>=6.6')
+makedepends=('git')
+provides=("${pkgname%-git}")
+conflicts=("${pkgname%-git}")
+source=("git+$url.git")
+sha256sums=('SKIP')
+
+pkgver() {
+    cd "$_repo"
+    printf 'r%s.%s' "$(git rev-list --count HEAD)" "$(git rev-parse --short=7 HEAD)"
+}
+
+package() {
+    install -d "$pkgdir/usr/share/kwin/effects/$_effect"
+    cp -a "$_repo/package/." "$pkgdir/usr/share/kwin/effects/$_effect/"
+    install -Dm644 "$_repo/README.md" -t "$pkgdir/usr/share/doc/$pkgname/"
+}
