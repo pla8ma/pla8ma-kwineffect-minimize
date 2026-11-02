@@ -6,6 +6,7 @@
                 "Name": "Pla8ma"
             }
         ],
+        "BugReportUrl": "https://github.com/pla8ma/pla8ma-kwineffect-minimize/issues",
         "Category": "Appearance",
         "Description": "Pla8ma minimize animation: shrinking to just above the taskbar button while fading",
         "Description[de]": "Pla8ma-Animation zum Minimieren und Wiederherstellen: schrumpfen bis knapp über den Taskleistenknopf und dabei ausblenden",
@@ -13,7 +14,8 @@
         "Id": "kwineffect_pla8ma_minimize",
         "License": "GPL-2.0-or-later",
         "Name": "Minimize (Pla8ma)",
-        "Name[de]": "Minimieren (Pla8ma)"
+        "Name[de]": "Minimieren (Pla8ma)",
+        "Website": "https://github.com/pla8ma/pla8ma-kwineffect-minimize"
     },
     "X-KDE-Ordering": 60,
     "X-KWin-Exclusive-Category": "minimize",
